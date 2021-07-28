@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分页按钮案例</title>
+</head>
+<style>
+    li {
+        float: left;
+        width: 30px;
+        height: 30px;
+        border: 2px solid pink;
+        margin: 10px;
+        text-align: center;
+        line-height: 30px;
+        list-style: none;
+        /* 将li盒子变为正圆 */
+        border-radius: 50%;
+        /* 鼠标放置时变为小手形状 */
+        cursor: pointer;
+        /* 过渡加到元素本身效果会更温和 */
+        transition: all 0.4s;
+    }
+    
+    li:hover {
+        transform: scale(1.2);
+    }
+</style>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+</body>
+
+</html>

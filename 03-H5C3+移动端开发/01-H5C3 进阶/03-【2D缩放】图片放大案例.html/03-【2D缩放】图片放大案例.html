@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片放大案例</title>
+</head>
+<style>
+    div {
+        /* 将放大溢出的部分隐藏 */
+        overflow: hidden;
+        float: left;
+        margin: 10px;
+    }
+    
+    div img {
+        /* 过渡加到本身元素上效果会更温和 */
+        transition: all 0.4s;
+    }
+    
+    div img:hover {
+        transform: scale(1.2);
+    }
+</style>
+
+<body>
+    <div class="div">
+        <a href="#"><img src="scale.jpg" alt=""></a>
+    </div>
+    <div class="div">
+        <a href="#"><img src="scale.jpg" alt=""></a>
+    </div>
+    <div class="div">
+        <a href="#"><img src="scale.jpg" alt=""></a>
+    </div>
+    <div class="div">
+        <a href="#"><img src="scale.jpg" alt=""></a>
+    </div>
+</body>
+
+</html>

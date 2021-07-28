@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D旋转中心点案例</title>
+</head>
+<style>
+    div {
+        /* 将旋转溢出的部分隐藏 */
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        border: 1px solid pink;
+        margin: 10px;
+        float: left;
+    }
+    
+    div::before {
+        content: '表哥，我输来了喔~';
+        display: block;
+        /* 将旋转的伪类盒子设置为和div一样大小 */
+        width: 100%;
+        height: 100%;
+        background-color: hotpink;
+        /* 第一步：先顺时针旋转180度 */
+        transform: rotate(180deg);
+        /* 第二步：以左下角的点做为旋转中心点 */
+        transform-origin: left bottom;
+        /* 设置旋转过渡时间，过渡加到元素本身效果会更温和 */
+        transition: all 0.4s;
+    }
+    
+    div:hover::before {
+        /* 鼠标放置时伪类盒子旋转到初始位置 */
+        transform: rotate(0deg);
+    }
+</style>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
