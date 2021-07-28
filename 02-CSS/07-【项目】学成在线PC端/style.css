@@ -1,0 +1,485 @@
+/* 一、清除所有样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 二、设置版心的格式，方便各主体区域调用 */
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 三、设置基本的格式 */
+
+
+/* 1、设置主页面背景颜色 */
+
+body {
+    background-color: #f3f5f7;
+}
+
+
+/* 2、清除所有列表的前标 */
+
+li {
+    list-style: none;
+}
+
+
+/* 3、清除所有链接的下划线 */
+
+a {
+    text-decoration: none;
+}
+
+
+/* 4、清除输入框与按钮框的外框线 */
+
+input,
+button {
+    outline: none;
+}
+
+
+/* 5、设置当鼠标放置按钮时，鼠标变为小手状态 */
+
+button {
+    cursor: pointer;
+}
+
+
+/* 6、双伪元素清除浮动代码 */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* 页面CSS样式 */
+
+
+/* 一、头部区域开始栏部分 【header】 */
+
+
+/* 1、头部区域总体盒子样式 */
+
+.header {
+    height: 42px;
+    /* 设置外边距，上下30px，左右需设置居中（此地方会层叠 .w 里的margin） */
+    margin: 30px auto;
+}
+
+
+/* 2、头部左边logo模块 【logo】 样式 */
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+
+/* 2、头部中间导航模块 【nav】 样式 */
+
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+
+/* 3、头部中间搜索模块 【search】 模块 */
+
+.search {
+    float: left;
+    width: 421px;
+    height: 42px;
+    margin-left: 70px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    /* 按钮button默认有个边框需要我们手动去掉 */
+    border: 0;
+    background: url(images/btn.png);
+}
+
+
+/* 4、头部右边用户模块 【user】 样式 */
+
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-style: 14px;
+    color: #666;
+}
+
+
+/* 图片文字垂直居中对齐（行内块/行内元素才可添加此属性） */
+
+.user img {
+    vertical-align: middle;
+}
+
+
+/* 二、banner栏部分 【banner】 样式 */
+
+
+/* 1、banner区域总体盒子样式 */
+
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+
+/* 2、banner 中间版心背景图片样式 */
+
+.banner .w {
+    height: 421px;
+    /* 背景图片不重复，垂直靠上，水平居中对齐 */
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+
+/* 3、banner左边菜单栏模块 【subnav】 样式 */
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.subnav ul {
+    padding-top: 8px;
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li a span {
+    float: right;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+
+/* 4、banner右边课程表模块 【course】 样式 */
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+    /* 浮动的盒子不会有外边距合并的问题 */
+    margin-top: 50px;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.bd {
+    padding: 0 20px;
+}
+
+.bd ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.bd .more {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* 三、精品推荐横向菜单栏部分 【goods】 样式 */
+
+
+/* 1、goods区域总体盒子 【goods】 样式 */
+
+.goods {
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    /* 父级行高可被子级继承，即下面的.goods h3、.goods ul、.mod均可继承此行高 */
+    line-height: 60px;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 2、goods区域左边标题 【h3】 样式 */
+
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+
+/* 3、goods区域中间菜单栏样式 */
+
+.goods ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 30px;
+    font-size: 16px;
+    color: #050505;
+    border-left: 1px solid #ccc;
+}
+
+.goods ul li a:hover {
+    color: #00a4ff;
+}
+
+
+/* 4、goods区域右边功能栏 【mod】 样式 */
+
+.mod {
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+.mod:hover {
+    font-weight: 700;
+}
+
+
+/* 三、核心内容-精品推荐部分 【box】 样式 */
+
+
+/* 1、box区域总体盒子样式 */
+
+.box {
+    margin-top: 30px;
+}
+
+
+/* 2、标题栏部分 【box-hd】 样式 */
+
+.box-hd {
+    height: 45px;
+}
+
+.box-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box-hd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.box-hd a:hover {
+    font-weight: 700;
+}
+
+
+/* 3、产品展示区模块 【box-bd】 样式 */
+
+.box-bd ul {
+    /* 把 li 的父 ul 修改的足够宽一行能装开5个盒子就不会换行了 */
+    width: 1225px;
+}
+
+.box-bd ul li {
+    /* 子绝父相，此为父相 */
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.box-bd ul li em {
+    /* 子绝父相，此为子绝 */
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+.box-bd ul li>img {
+    /* 强制修改图片的大小，使其能容纳进 li 里；由于涉及到图片的定位，因此只把li的一级子元素设置为此大小*/
+    width: 100%;
+}
+
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-bd .info span {
+    color: #ff7c2d;
+}
+
+
+/* 底部栏部分 【footer】 样式 */
+
+
+/* 1、footer区域总体盒子样式 */
+
+.footer {
+    height: 400px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 35px;
+}
+
+
+/* 2、footer区域左边版权模块 【copyright】 样式 */
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    margin: 20px 0 15px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+
+/* 3、footer区域右边链接模块 【links】样式 */
+
+.links {
+    float: left;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a {
+    font-size: 12px;
+    color: #333;
+}
+
+.links dl dd a:hover {
+    color: #00a4ff;
+}
