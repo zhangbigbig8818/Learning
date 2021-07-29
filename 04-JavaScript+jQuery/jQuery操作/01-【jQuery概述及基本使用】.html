@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <div></div>
+
+    <script>
+        // 一、jQuery 介绍：jQuery 是一个快速、简洁的 JavaScript 库，Query 封装了 JavaScript 常用的功能代码，优化了 DOM 操作、事件处理、动画设计和 Ajax 交互。学习jQuery本质： 就是学习调用这些函数（ 方法）。
+
+
+        // 二、jQuery 的优点：
+        // (1) 轻量级。核心文件才几十kb，不会影响页面加载速度
+        // (2) 跨浏览器兼容。基本兼容了现在主流的浏览器
+        // (3) 链式编程、隐式迭代
+        // (4) 对事件、样式、动画支持，大大简化了DOM操作
+        // (5) 支持插件扩展开发。有着丰富的第三方的插件，例如：树形菜单、日期控件、轮播图等
+        // (6) 免费、开源
+
+
+        // 三、jQuery 的下载
+        // (1) 官网地址： https://jquery.com/
+        // (2) 版本：
+        // a. 1x ：兼容 IE 678 等低版本浏览器， 官网不再更新
+        // b. 2x ：不兼容 IE 678 等低版本浏览器， 官网不再更新
+        // c. 3x ：不兼容 IE 678 等低版本浏览器， 是官方主要更新维护的版本
+
+
+        // 四、jQuery 的使用步骤
+        // (1) 引入 jQuery 文件
+        // (2) 调用即可
+
+
+        // 五、基本使用
+        // $('div').hide(); // 将 div 隐藏
+
+
+        // 六、入口函数：等着页面DOM加载完毕再去执行js 代码
+        // 1. 原生js中的入口函数
+        // window.onload = function(){
+        //     // 执行函数
+        // }
+
+        // 2. jQuery 中的入口函数
+        // (1) 等着页面DOM加载完毕再去执行js 代码
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // })
+        // (2) 等着页面DOM加载完毕再去执行js 代码（更方便，推荐使用）
+        // $(function() {
+        //     $('div').hide();
+        // })
+
+
+        // 七、jQuery 的顶级对象 $
+        // 1. $ 是 jQuery 的别称，在代码中可以使用 jQuery 代替 $，但一般为了方便，通常都直接使用 $。
+        // 2. $ 是jQuery 的顶级对象，相当于原生JavaScript中的 window。把元素利用$包装成jQuery对象，就可以调用jQuery 的方法。
+    </script>
+</body>
+
+</html>

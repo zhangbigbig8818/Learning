@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 案例一：一行打印N个星星
+    // var num = prompt('请输入星星的个数');
+    // var str = '';
+    // for (var i = 1; i <= num; i++) {
+    //     str += '★';
+    // }
+    // console.log(str);
+
+
+    // 案例二：打印n行n列的星星
+    // var rows = prompt('请您输入行数:');
+    // var cols = prompt('请您输入列数:');
+    // var str = ''; // 放置星星字符串
+    // for (var i = 1; i <= rows; i++) { // 控制行数
+    //     for (var j = 1; j <= cols; j++) { // 控制列数
+    //         str = str + '★';
+    //     }
+    //     str += '\n'; // 打印完一行换行
+    // }
+    // console.log(str);
+
+
+    // 案例三：打印倒三角形案例
+    // var str = ''; // 放置星星字符串
+    // for (var i = 1; i <= 10; i++) { // 控制行数
+    //     for (var j = i; j <= 10; j++) { // 控制列数
+    //         str += '★';
+    //     }
+    //     str += '\n'; // 打印完一行换行
+    // }
+    // console.log(str);
+
+
+    // 案例四：打印正三角形案例
+    var str = ''; // 放置星星字符串
+    for (var i = 1; i <= 10; i++) { // 控制行数
+        for (var j = 11 - i; j <= 10; j++) { // 控制列数
+            str += '★';
+        }
+        str += '\n'; // 打印完一行换行
+    }
+    console.log(str);
+</script>
+
+<body>
+
+</body>
+
+</html>

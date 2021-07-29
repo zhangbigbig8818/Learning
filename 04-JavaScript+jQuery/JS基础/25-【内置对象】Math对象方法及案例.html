@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 第一部分：Math对象 用法
+    // 1、 Math.PI // 圆周率
+    // console.log(Math.PI);
+
+    // 2、 Math.random() // 生成随机数（random()返回一个随机的小数0 =< x < 1）
+    // function getRandom(min, max) { // 随机函数（固定写法）
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
+    // 案例一：我们想要得到两个数之间的随机整数 并且 包含这2个整数
+    // console.log(getRandom(1, 10)); // 调用函数
+    // 案例二：随机点名
+    // var arr = ['张三', '张三丰', '张三疯子', '李四', '李思思', 'pink老师'];
+    // console.log(arr[getRandom(0, arr.length - 1)]);// 调用函数
+
+    // 3、 Math.max() // 求最大值
+    // console.log(Math.max(1, 99, 3)); // 99
+    // console.log(Math.max(-1, -10)); // -1
+    // console.log(Math.max(1, 99, 'pink老师')); // NaN
+    // console.log(Math.max()); // -Infinity
+
+    // 4、 Math.min() // 求最小值
+
+    // 5、 Math.floor() // 向下取整
+    // console.log(Math.floor(1.1)); // 1
+    // console.log(Math.floor(1.9)); // 1
+
+    // 6、Math.ceil() // 向上取整
+    // console.log(Math.ceil(1.1)); // 2
+    // console.log(Math.ceil(1.9)); // 2
+
+    // 7、Math.round() // 四舍五入取整
+    // console.log(Math.round(1.1)); // 1
+    // console.log(Math.round(1.5)); // 2 其他数字都是四舍五入，但是 .5 特殊 它往大了取  
+    // console.log(Math.round(1.9)); // 2
+    // console.log(Math.round(-1.1)); // -1
+    // console.log(Math.round(-1.5)); // 这个结果是 -1
+
+    // 8、Math.abs() // 求绝对值
+    // console.log(Math.abs(1)); // 1
+    // console.log(Math.abs(-1)); // 1
+    // console.log(Math.abs('-1')); // 1 隐式转换 会把字符串型 -1 转换为数字型
+    // console.log(Math.abs('pink')); // NaN
+
+    // 9、Math.sin() // 求正弦
+
+    // 10、Math.cos() // 求余弦
+
+    // 11、Math.power() // 求指数次幂
+
+    // 12、Math.sqrt() // 求平方根
+
+
+
+    // 案例一：猜数字游戏
+    // 1.随机生成一个1~10 的整数  我们需要用到 Math.random() 方法。
+    // 2.需要一直猜到正确为止，所以需要一直循环。
+    // function getRandom(min, max) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
+    // var random = getRandom(1, 10);
+    // while (ture) {
+    //     var num = prompt('你来猜？ 输入1~10之间的一个数字');
+    //     if (num > random) {
+    //         alert('你猜大了');
+    //     } else if (num < random) {
+    //         alert('你猜小了');
+    //     } else {
+    //         alert('你好帅哦，猜对了');
+    //         break; // 退出整个循环结束程序
+    //     }
+    // }
+
+
+    // 案例二：猜数字游戏
+    // 1.要求用户猜 1~50之间的一个整数 但是只有 3次猜的机会
+    // function getRandom(min, max) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
+    // var random = getRandom(1, 50);;
+    // for (var i = 1; i <= 3; i++) {
+    //     var num = prompt('你来猜？ 输入1~50之间的一个数字');
+    //     if (num > random) {
+    //         alert('你猜大了，请继续猜');
+    //     } else if (num < random) {
+    //         alert('你猜小了，请继续猜');
+    //     } else {
+    //         alert('你好帅哦，猜对了');
+    //         break; // 退出整个循环结束程序
+    //     }
+    //     if (i == 3) {
+    //         alert('抱歉，你的次数已用完');
+    //     }
+    // }
+</script>
+
+<body>
+
+</body>
+
+</html>

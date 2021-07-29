@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+
+    <script>
+        // 一、隐式迭代：就是把匹配的所有元素内部进行遍历循环，给每一个元素添加某个方法（jQuery默认携带）
+        // 二、链式编程：就是将多个方法用点语法链接起来,让代码更加简洁, 可读性更强
+        // 三、排他思想：利用siblings() 选择器实现排他思想（当前元素设置样式，其余的兄弟元素清除样式。）
+        $(function() {
+            $('button').click(function() { // 隐式迭代，给所有的按钮都绑定了点击事件
+                // (1) 方法一：
+                // $(this).css('color', 'red'); // 让当前元素颜色变为红色
+                // $(this).siblings().css('color', ''); // 让其余的姐妹元素不变色 
+                // (2) 方法二：链式编程
+                // $(this).css('color', 'red').siblings().css('color', '');
+
+                $(this).css({
+                    color: 'red',
+                    backgroundColor: 'pink'
+                }).siblings().css({
+                    color: '',
+                    backgroundColor: ''
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+
+    <script>
+        // 常见事件对象的属性和方法
+        // 1. e.target 返回的是触发事件的对象（元素）；this 返回的是绑定事件的对象（元素）
+        // 区别： e.target 点击了哪个元素，就返回哪个元素；this 哪个元素绑定了这个点击事件，那么就返回谁
+        // var ul = document.querySelector('ul');
+        // ul.addEventListener('click', function(e) {
+        //     console.log(e.target); // 当点击li，返回的是 li
+        //     console.log(this); // 当点击li，返回的是 ul
+        // })
+
+        // 2. 因为ie678无法识别e.target，因此我们有以下兼容性写法
+        // var ul = document.querySelector('ul');
+        // ul.onclick = function(e) {
+        //     e = e || window.event;
+        //     var target = e.target || e.srcElement; // e.srcElement为ie678写法
+        //     console.log(target);
+        // }
+
+        // 3. 了解 跟 this 有个非常相似的属性 currentTarget  ie678不认识
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            console.log(e.target); // 当点击li，返回的是 li
+            console.log(this); // 当点击li，返回的是 ul
+            console.log(e.currentTarget);
+        })
+    </script>
+</body>
+
+</html>

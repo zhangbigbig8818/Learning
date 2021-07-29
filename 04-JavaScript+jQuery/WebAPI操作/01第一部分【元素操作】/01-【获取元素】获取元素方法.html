@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 一、根据 id 获取元素：getElementById(); -->
+    <!-- <div id="time">2019-9-9</div>
+    <hr> -->
+
+
+    <!-- 二、根据标签名获取元素：getElementByTagName(); -->
+    <!-- <ul>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+        <li>知否知否，应是等你好久</li>
+    </ul>
+    <ol id="ol">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ol> -->
+    <!-- <hr> -->
+
+
+    <!-- 三、根据 name 属性值获取元素：getElementsByName(); -->
+    <!-- <input type="text" name="hobby">
+    <hr> -->
+
+
+    <!-- 四、根据类名获取元素：getElementsByClassName(); -->
+    <!-- <div class="box">盒子01</div>
+    <div class="box">盒子02</div>
+    <hr> -->
+
+    <!-- 五、根据选择器获取元素：querySelector(); 和 querySelectorAll(); -->
+    <!-- <div class="box">盒子01</div>
+    <div class="box">盒子02</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <hr> -->
+    <script>
+        // 注意：因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面
+
+        // 掌握
+        // getElementById()
+        // getElementsByTagName()
+        // 了解
+        // getElementsByName()
+        // getElementsByClassName()
+        // querySelector()
+        // querySelectorAll()
+
+        // 一、根据 id 获取元素：getElementById();（返回的是一个元素对象）
+        // var timer = document.getElementById('time');
+        // console.log(timer);
+        // console.log(typeof timer);
+        // console.dir(timer); // console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法
+
+
+        // 二、根据标签名获取元素：getElementByTagName();（返回的是获取过来元素对象的集合；以伪数组的形式存储的）
+        // var lis = document.getElementsByTagName('li');
+        // console.log(lis);
+        // console.log(lis[0]);
+        // (1) 我们想要依次打印里面的元素对象我们可以采取遍历的方式
+        // for (var i = 0; i < lis.length; i++) {
+        //     console.log(lis[i]);
+        // }
+        // (2) 如果页面中只有一个li 返回的还是伪数组的形式 
+        // (3) 如果页面中没有这个元素 返回的是空的伪数组的形式
+        // (4) element.getElementsByTagName('标签名'); 父元素必须是指定的单个元素
+        // var ol = document.getElementsByTagName('ol');
+        // console.log(ol[0].getElementsByTagName('li'));
+        // var ol = document.getElementById('ol');
+        // console.log(ol.getElementsByTagName('li'));
+
+
+        // 三、根据 name 属性值获取元素：getElementsByName();
+        // var input = document.getElementsByName('hobby');
+
+
+        // 四、根据类名获取元素：getElementsByClassName();【H5新增】
+        // var boxs = document.getElementsByClassName('box');
+        // console.log(boxs);
+
+
+        // 五、根据选择器获取元素：querySelector(); 和 querySelectorAll();【H5新增】
+        // (1) querySelector(); 返回指定选择器的第一个元素对象；切记里面的选择器需要加符号.box# nav
+        // var firstBox = document.querySelector('.box');
+        // console.log(firstBox);
+        // var nav = document.querySelector('#nav');
+        // console.log(nav);
+        // var li = document.querySelector('li');
+        // console.log(li);
+        // (2) querySelectorAll(); 返回指定选择器的所有元素对象集合
+        // var allBox = document.querySelectorAll('.box');
+        // console.log(allBox);
+        // var lis = document.querySelectorAll('li');
+        // console.log(lis);
+
+        // 六、 获取特殊元素：
+        // (1) 获取body元素
+        // var bodyEle = document.body;
+        // console.log(bodyEle);
+        // console.dir(bodyEle);
+
+        // (2) 获取html元素
+        // var htmlEle = document.documentElement;
+        // console.log(htmlEle);
+    </script>
+</body>
+
+</html>

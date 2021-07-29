@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.itcast.cn" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="1" data-index="2">我是div</div>
+    <span>123</span>
+
+    <script>
+        $(function() {
+            // 一、 prop()：设置或获取元素 【固有属性值】
+            // 所谓元素固有属性就是元素本身自带的属性，比如 <a> 元素里面的 href ，比如 <input> 元素里面的 type。
+            // 1. 获取属性语法：prop(''属性'')
+            console.log($('a').prop('href')); // http://www.itcast.cn/
+            // 2. 设置属性语法：prop(''属性'', ''属性值'')
+            $('a').prop('title', '我们都挺好');
+
+            $('input').change(function() { // 判断元素状态是否发生改变
+                console.log($(this).prop('checked')); // 选中时返回true，未选中返回false
+            })
+
+
+            // 二、 attr()：设置或获取元素 【自定义属性值】
+            // 用户自己给元素添加的属性，我们称为自定义属性。 比如给 div 添加 index =“1”。
+            // 1. 获取属性语法：attr(''属性'')              // 类似原生 getAttribute()
+            console.log($('div').attr('index')); // 1
+            // 2. 设置属性语法：attr(''属性'', ''属性值'')   // 类似原生 setAttribute()
+            $('div').attr('index', 4);
+            console.log($('div').attr('index')); // 4
+            // 注：该方法也可以获取 H5 自定义属性
+            console.log($('div').attr('data-index')); // 2
+
+
+            // 三、 data()：数据缓存
+            // data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。
+            // 1. 附加数据语法：data(''name'',''value'')    // 向被选元素附加数据
+            $('span').data('uname', 'andy');
+            // 2. 获取数据语法：date(''name'')              // 向被选元素获取数据
+            console.log($('span').data('uname')); // andy
+            // 注：同时，还可以读取 HTML5 自定义属性 data-index ，得到的是数字型
+            console.log($('div').data('index')); // 2（且为数字型）
+        })
+    </script>
+</body>
+
+</html>

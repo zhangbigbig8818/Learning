@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 第一部分：字符串对象 性质
+    // 1.基本包装类型：把简单数据类型 包装成为 复杂数据类型
+    // var str = 'andy';
+    // console.log(str.length); // 简单数据类型为什么会有length 属性呢？ 
+    // var temp = new String('andy'); // 第一步：把简单数据类型包装为复杂数据类型 
+    // str = temp; // 第二步：把临时变量的值 给 str
+    // temp = null; // 第三步：销毁这个临时变量
+
+
+    // 2、字符串的不可变性
+    // var str = 'andy';
+    // str = 'red';
+    // console.log(str);
+    // 当重新给str赋值的时候，常量'andy'不会被修改，依然在内存中
+    // 重新给字符串赋值，会重新在内存中开辟空间，这个特点就是字符串的不可变
+    // 由于字符串的不可变，在大量拼接字符串的时候会有效率问题
+
+
+    // 3、返回指定内容在元字符串中的位置：从前查找indexOf() 或者 从后查找lastIndexOf()
+    // (1) 从前查找indexOf('要查找的字符', [起始的位置]) 
+    // var str = '改革春风吹满地，春天来了';
+    // console.log(str.indexOf('春')); // 2
+    // console.log(str.indexOf('春', 3)); // 8
+
+    // (2) 从后查找lastIndexOf('要查找的字符', [起始的位置])
+    // var str = '改革春风吹满地，春天来了';
+    // console.log(str.lastIndexOf('春')); // 8
+    // console.log(str.lastIndexOf('春', 3)); // 2
+
+
+    // 4、根据位置返回字符：charAt(index) 或者 str[index] H5新增的
+    // (1) charAt(index)
+    // var str = 'andy';
+    // console.log(str.charAt(3)); // y
+
+    // (2) str[index] H5新增的
+    // var str = 'andy';
+    // console.log(str[0]); // a
+
+
+    // 5、根据字符返回ASCII值：charCode(index)（ 目的： 判断用户按下了哪个键）
+    // var str = 'andy';
+    // console.log(str.charCodeAt(0)); // 'a' 键的ASCII值是 97
+
+
+    // 6、拼接字符串：concat('字符串1','字符串2'....)；等效于+，+更常用
+    // var str = 'andy';
+    // console.log(str.concat('red')); // andyred
+
+
+    // 7、截取字符串：substr('截取的起始位置', '截取几个字符')
+    // var str = '改革春风吹满地';
+    // console.log(str.substr(2, 2)); // 春风
+
+
+    // 8、替换字符：replace('被替换的字符', '替换为的字符')； 它只会替换第一个字符
+    // var str = 'andyandy';
+    // console.log(str.replace('a', 's')); // sndyandy
+
+    // 9、 字符转换为数组： split('分隔符')（前面我们学过 join 把数组转换为字符串）
+    // var str = 'red, pink, blue';
+    // console.log(str.split(',')); // ["red", "pink", "blue"]
+    // var str = 'red&pink&blue';
+    // console.log(str.split('&')); // ["red", "pink", "blue"]
+
+
+
+    // 案例一：查找字符串中某个字符出现的次数
+    // 查找字符串 "abcoefoxyozzopp"中所有o出现的位置以及次数
+    // 核心算法：先查找第一个o出现的位置
+    // 然后 只要indexOf 返回的结果不是 -1 就继续往后查找
+    // 因为indexOf 只能查找到第一个，所以后面的查找，一定是当前索引加1，从而继续查找
+    // var str = "oabcoefoxyozzopp";
+    // var index = str.indexOf('o');
+    // var num = 0;
+    // while (index !== -1) {
+    //     console.log(index);
+    //     num++;
+    //     index = str.indexOf('o', index + 1);
+    // }
+    // console.log('o出现的次数是: ' + num);
+
+
+    // 案例二：有一个对象 来判断是否有该属性 对象['属性名']
+    // var o = {
+    //     age: 18
+    // }
+    // if (o['sex']) {
+    //     console.log('里面有该属性');
+    // } else {
+    //     console.log('没有该属性');
+    // }
+
+
+    // 案例三：判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数。
+    // 核心算法：利用 charAt(） 遍历这个字符串
+    // 把每个字符都存储给对象，如果对象没有该属性，就为1，如果存在了就 +1
+    // 遍历对象，得到最大值和该字符
+    // var str = 'abcoefoxyozzopp';
+    // var o = {};
+    // for (var i = 0; i < str.length; i++) {
+    //     var chars = str.charAt(i);
+    //     if (chars in o) {
+    //         o[chars]++;
+    //     } else {
+    //         o[chars] = 1;
+    //     }
+    // }
+    // console.log(o);
+    // var max = 0;
+    // var ch = '';
+    // for (var k in o) {
+    //     if (o[k] > max) {
+    //         max = o[k];
+    //         ch = k;
+    //     }
+    // }
+    // console.log('最多的字符是' + ch + '，其次数是' + max + '次');
+
+
+    // 案例四：将字符串 'abcoefoxyozzopp'  要求把里面所有的 o 替换为 *
+    // var str = 'abcoefoxyozzopp';
+    // while (str.indexOf('o') !== -1) {
+    //     str = str.replace('o', '*');
+    // }
+    // console.log(str);  // abc*ef*xy*zz*pp
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+    <div class="test">我是原先的div</div>
+
+    <script>
+        // 一、创建元素
+        // 语法：$(''<li></li>'');
+        var li = $('<li>我是后来创建的li</li>');
+
+        // 二、添加元素
+        // 1、内部添加：
+        // (1) element.append(''内容'');    把内容放入匹配元素内部最后面， 类似原生 appendChild。
+        // $('ul').append(li);
+
+        // (2) element.prepend(''内容'');   把内容放入匹配元素内部最前面
+        // $('ul').prepend(li);
+
+        // 2、外部添加
+        // (1) element.after(''内容'');     把内容放入目标元素后面
+        // var div = $('<div>我是后妈生的</div>')
+        // $('.test').after(div);
+        // (2) element.before(''内容'');    把内容放入目标元素前面
+        // $('.test').before(div);
+
+
+        // 三、删除元素
+        // 1. element.remove();             删除匹配的元素（杀本身）
+        $('ul').remove();
+        // 2. element.empty();              删除匹配的元素集合中所有的子节点（清空内容，杀孩子）\
+        $('ul').empty();
+        // 3. element.html('''');           删除匹配的元素集合中所有的子节点（清空内容，杀孩子）
+        $('ul').html('');
+        // 注意：empt() 和 html('''') 作用等价，都可以删除元素里面的内容，只不过 html 还可以设置内容。
+    </script>
+</body>
+
+</html>

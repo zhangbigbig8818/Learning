@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .father {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        margin: 100px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .son {
+        width: 150px;
+        height: 150px;
+        background-color: purple;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+</style>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        // 一、 offset() 设置或获取元素偏移
+        // 1. offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。
+        // console.log($('.son').offset());
+
+        // 2. 该方法有2个属性 left、top 。offset().top 用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。
+        // console.log($('.son').offset().top);
+        // console.log($('.son').offset().left);
+
+        // 3. 可以设置元素的偏移：offset({ top: 10, left: 30 });
+        // $('.son').offset({
+        //     top: 200,
+        //     left: 200
+        // });
+
+        // 二、 position() 获取元素偏移（获取相对于父级的元素偏移；只可获取不可设置修改）
+        // 1. position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准
+        console.log($(".son").position());
+
+        // 2. 该方法有2个属性 left、top。position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定位父级左侧的距离。
+        console.log($(".son").position().top);
+        console.log($(".son").position().left);
+
+        // 3. 该方法只可获取不可设置修改
+    </script>
+</body>
+
+</html>

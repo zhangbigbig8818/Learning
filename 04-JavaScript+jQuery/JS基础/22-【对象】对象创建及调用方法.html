@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 方法一：利用对象字面量创建对象及调用
+    // var obj = {
+    //     uname: '张三疯',
+    //     age: 18,
+    //     sex: '男',
+    //     sayHai: function() {
+    //         console.log('你好呀~');
+    //         console.log(this.uname);
+    //     }
+    // }
+    // console.log(obj.uname); // 调用对象属性方法一
+    // console.log(obj['age']); // 调用对象属性方法二
+    // obj.sayHai(); // 调用对象方法方法一
+
+
+    // 方法二：利用 new Object 创建对象及调用
+    // var obj = new Object()
+    // obj.uname = '张三疯';
+    // obj.age = 18;
+    // obj.sex = '男';
+    // obj.sayHai = function() {
+    //     console.log('你好呀~');
+    //     console.log(this.uname);
+    // }
+    // console.log(obj.uname); // 调用对象属性方法一
+    // console.log(obj['age']); // 调用对象属性方法二
+    // obj.sayHai(); // 调用对象方法方法一
+
+
+    // 方法三：利用自定义构造函数创建对象及调用
+    // function Star(uname, age, sex) {
+    //     this.name = uname;
+    //     this.age = age;
+    //     this.sex = sex;
+    //     this.sing = function(sang) {
+    //         console.log(sang);
+    //     }
+    // }
+    // var ldh = new Star('刘德华', 18, '男'); // 创建新对象（对象实例化）
+    // console.log(ldh.name); // 调用对象属性方法一
+    // console.log(ldh['sex']); // 调用对象属性方法二
+    // ldh.sing('冰雨'); // 调用对象方法方法一
+    // var zxy = new Star('张学友', 26, '女'); // 创建新对象（对象实例化）
+    // console.log(zxy.name); // 调用对象属性方法一
+    // console.log(zxy['sex']); // 调用对象属性方法二
+    // zxy.sing('李香兰'); // 调用对象方法方法一
+
+
+    // 方法四：工厂模式函数创建对象及调用
+    // function Star(uname, age, sex) {
+    //     var person = new Object();
+    //     person.name = uname;
+    //     person.age = age;
+    //     person.sex = sex;
+    //     person.sing = function(sang) {
+    //         console.log(sang);
+    //     }
+    //     return person;
+    // }
+    // var ldh = Star('刘德华', 18, '男'); // 创建新对象（对象实例化）
+    // console.log(ldh.name); // 调用对象属性方法一
+    // console.log(ldh['sex']); // 调用对象属性方法二
+    // ldh.sing('我很喜欢唱歌！'); // 调用对象方法方法一
+</script>
+
+<body>
+
+</body>
+
+</html>

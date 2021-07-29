@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 第一部分：Date对象 用法
+    // 1、获取系统当前时间
+    // var date = new Date();
+    // console.log(date);
+
+    // 2、参数常用的写法 数字型 2019, 10, 01 或者是 字符串型 '2019-10-1 8:8:8'
+    // var date1 = new Date(2019, 10, 1);
+    // console.log(date1); // 注意返回的是 11月 不是 10月（月份从0开始）
+    // var date2 = new Date('2019-10-1 8:8:8');
+    // console.log(date2); // 此处返回的是 10月
+
+    // 3、格式化日期 年月日
+    // var date = new Date();
+    // console.log(date.getFullYear()); // 返回当前日期的年 2021
+    // console.log(date.getMonth() + 1); // 返回当前日期的月份 5 ;(注意：月份需 +1)
+    // console.log(date.getDate()); // 返回当前日期的号 10
+    // console.log(date.getDay()); // 返回当前日期的周几 1 ;(注意：周日返回的是 0)
+    // 案例一： 写一个 2021 年 5 月 10 日 星期一
+    // var date = new Date();
+    // var year = date.getFullYear();
+    // var month = date.getMonth() + 1;
+    // var dates = date.getDate();
+    // var day = date.getDay();
+    // var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    // console.log('今天是：' + year + '年' + month + '月' + dates + '日' + arr[day]);
+
+    // 4、格式化日期 时分秒
+    // var date = new Date();
+    // console.log(date.getHours()); // 返回当前日期的时
+    // console.log(date.getMinutes()); // 返回当前日期的时的分钟
+    // console.log(date.getSeconds()); // 返回当前日期的时的分钟的秒
+    // 案例一：要求封装一个函数返回当前的时分秒 格式 08:08:08
+    // function getTimer() {
+    //     var time = new Date();
+    //     var h = time.getHours();
+    //     h = h < 10 ? '0' + h : h;
+    //     var m = time.getMinutes();
+    //     m = m < 10 ? '0' + m : m;
+    //     var s = time.getSeconds();
+    //     s = s < 10 ? '0' + s : s;
+    //     return h + ':' + m + ':' + s;
+    // }
+    // console.log(getTimer());
+
+    // 5、时间戳（获得Date总的毫秒数；不是当前时间的毫秒数 而是距离1970年1月1号过了多少毫秒数）
+    // 方法一：通过 valueOf() 或者 getTime()
+    // var date = new Date();
+    // console.log(date.valueOf()); // 就是 我们现在时间 距离1970.1.1 总的毫秒数
+    // console.log(date.getTime()); // 就是 我们现在时间 距离1970.1.1 总的毫秒数
+    // 方法二： 简单的写法 (最常用的写法)
+    // var date1 = +new Date(); // +new Date() 返回的就是总的毫秒数
+    // console.log(date1);
+    // 方法三： H5 新增的 获得总的毫秒数
+    // console.log(Date.now());
+
+
+
+    // 案例一：倒计时效果
+    // 1.核心算法：输入的时间减去现在的时间就是剩余的时间，即倒计时 ，但是不能拿着时分秒相减，比如 05 分减去25分，结果会是负数的。
+    // 2.用时间戳来做。用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数。
+    // 3.把剩余时间总的毫秒数转换为天、时、分、秒 （时间戳转换为时分秒）
+    // 核心转换公式如下： 
+    //  d = parseInt(总秒数/ 60/60 /24);    //  计算天数
+    //  h = parseInt(总秒数/ 60/60 %24)   //   计算小时
+    //  m = parseInt(总秒数 /60 %60 );     //   计算分数
+    //  s = parseInt(总秒数%60);            //   计算当前秒数
+
+    // function countDown(time) {
+    //     var nowTime = +new Date(); // 返回的是当前时间总的毫秒数
+    //     var inputTime = +new Date(time); // 返回的是用户输入时间总的毫秒数
+    //     var times = (inputTime - nowTime) / 1000; // times是剩余时间总的秒数 
+    //     var d = parseInt(times / 60 / 60 / 24); // 天数
+    //     d = d < 10 ? '0' + d : d;
+    //     var h = parseInt(times / 60 / 60 % 24); // 时数
+    //     h = h < 10 ? '0' + h : h;
+    //     var m = parseInt(times / 60 % 60); // 分钟数
+    //     m = m < 10 ? '0' + m : m;
+    //     var s = parseInt(times % 60); // 秒数
+    //     s = s < 10 ? '0' + s : s;
+    //     return '还剩' + d + '天' + h + '时' + m + '分' + s + '秒';
+    // }
+    // console.log(countDown('2021-5-13 18:00:00'));
+</script>
+
+<body>
+
+</body>
+
+</html>

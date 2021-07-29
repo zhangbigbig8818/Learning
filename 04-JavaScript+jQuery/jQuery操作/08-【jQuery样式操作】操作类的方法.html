@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        margin: 100px auto;
+        transition: all 0.5s;
+    }
+    
+    .current {
+        background-color: red;
+        transform: rotate(360deg);
+    }
+    
+    .one {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        transition: all .3s;
+    }
+    
+    .two {
+        transform: rotate(720deg);
+    }
+</style>
+
+<body>
+    <div></div>
+    <div class="one two"></div>
+    <script>
+        // 作用等同于以前的 classList，可以操作类样式， 注意操作类里面的参数不要加点。
+        $(function() {
+            // 1. 添加类 addClass()
+            // $('div').click(function() {
+            //     $(this).addClass('current');
+            // });
+
+
+            // 2. 删除类 removeClass()
+            // $('div').click(function() {
+            //     $(this).removeClass('current');
+            // });
+
+
+            // 3. 切换类 toggleClass()
+            // $('div').click(function() {
+            //     $(this).toggleClass('current');
+            // })
+
+
+            // 4. 判断是否有某个类名【hasClass()】（有返回 true；没有返回 false）
+            // console.log($("div:first").hasClass("current"));
+            // console.log($("div:last").hasClass("current"));
+
+
+            // 5. 注意：类操作不影响原先类
+            // (1) 传统类操作 className （会覆盖元素原先里面的类名）
+            // var one = document.querySelector('.one');
+            // one.className = 'two'; // 此时div的 one类和two类 会被 two类 替代
+            // (2) jQuery 操作类
+            // $(".one").addClass("two"); // 这个addClass相当于追加类名 不影响以前的类名
+            // $(".one").removeClass("two");
+
+
+        })
+    </script>
+</body>
+
+</html>
